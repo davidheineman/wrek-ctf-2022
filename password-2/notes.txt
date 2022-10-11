@@ -1,0 +1,9 @@
+let myinput = "(password)"
+let inputString = '{"password":"' + myinput + '"}'
+console.log(inputString)
+const response = await fetch('/password', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: inputString,
+})
+await response.json()

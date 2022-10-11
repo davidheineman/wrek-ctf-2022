@@ -1,0 +1,8 @@
+loc = {lat: 400, lon: 600}
+function gP(loc) {
+$.post('/api/getPosts', loc, function (data) {
+  data.forEach(function(post) {
+    console.log(post.distance)
+  });
+});
+}

@@ -1,0 +1,8 @@
+This is a classic buffer overflow.
+
+However, the buffer overflow is limited to 40 characters, so since the buffer is 24 characters, we can only overwrite 16 bytes of the stack. The buffer is declared in main() so we can overwrite 2 return addresses. We need to call 3 functions in order, so choosing where to go is tricky.
+
+Ideally the stack should be:
+main -> lilypad -> main -> set_frog -> set_coin -> froggers
+
+However, my idea was to overflow the buffer twice, this wasn't very successful.
